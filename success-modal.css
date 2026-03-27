@@ -1,0 +1,124 @@
+/* Modal de Pago Exitoso */
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-modal.show {
+    display: flex;
+    animation: fadeInModal 0.4s ease-out;
+}
+
+.success-modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    border-radius: 30px;
+    padding: 4rem 3rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 71, 87, 0.3);
+    animation: slideInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+    animation: scaleCheckmark 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+.success-modal-content h2 {
+    font-size: 2.2rem;
+    color: #ff4757;
+    margin: 1rem 0;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(255, 71, 87, 0.1);
+}
+
+.success-modal-content > p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0.5rem 0 2rem;
+    font-weight: 500;
+}
+
+.success-details {
+    background: rgba(255, 71, 87, 0.05);
+    border-left: 4px solid #ff4757;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.success-details p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.success-loader {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4757, #ff6b6b, #ff4757);
+    border-radius: 2px;
+    margin: 2rem auto 0;
+    animation: loadingBar 2s infinite;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInScale {
+    from {
+        transform: scale(0.8) translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleCheckmark {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes loadingBar {
+    0% {
+        width: 20px;
+    }
+    50% {
+        width: 60px;
+    }
+    100% {
+        width: 20px;
+    }
+}
